@@ -269,7 +269,7 @@ header {
 }
 
 .main section.page2 {
-    background: #555557 url(../images/motion.jpg) no-repeat center 0px;
+    background: #555557 url(/images/motion.jpg) no-repeat center 0px;
     background-size: 50%;
 }
 
