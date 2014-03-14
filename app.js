@@ -25,13 +25,13 @@ app.get('/', function(req, res) {
 });
 
 /* Login and registration */
-app.get('/login', function() {
+app.get('/login', function(req, res) {
 	res.json({ message: "welcome to login" });
 });
-app.get('/guest', function() {
+app.get('/guest', function(req, res) {
 	res.json({ message: "welcome to guest login" });
 });
-app.all('/signup', function() {
+app.all('/signup', function(req, res) {
 	res.json({ message: "welcome to signup" });
 });
 
