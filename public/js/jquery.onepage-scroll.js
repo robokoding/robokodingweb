@@ -63,10 +63,10 @@
             if (deltaX <= -50) {
               $this.trigger("swipeRight");
             }
-            if (deltaY >= 50) {
+            if (deltaY >= 10) {
               $this.trigger("swipeUp");
             }
-            if (deltaY <= -50) {
+            if (deltaY <= -10) {
               $this.trigger("swipeDown");
             }
             if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
@@ -324,20 +324,26 @@
         
         if (!$("body").hasClass("disabled-onepage-scroll")) {
           switch(e.which) {
+            case 33:
+              if (tag != 'input' && tag != 'textarea') el.moveUp();
+              break;
+            case 34:
+              if (tag != 'input' && tag != 'textarea') el.moveDown();
+              break;
             case 38:
-              if (tag != 'input' && tag != 'textarea') el.moveUp()
+              if (tag != 'input' && tag != 'textarea') el.moveUp();
               break;
             case 40:
-              if (tag != 'input' && tag != 'textarea') el.moveDown()
+              if (tag != 'input' && tag != 'textarea') el.moveDown();
               break;
             case 49:
-              if (tag != 'input' && tag != 'textarea') el.moveTo(1)
+              if (tag != 'input' && tag != 'textarea') el.moveTo(1);
               break;
             case 50:
-              if (tag != 'input' && tag != 'textarea') el.moveTo(2)
+              if (tag != 'input' && tag != 'textarea') el.moveTo(2);
               break;
             case 51:
-              if (tag != 'input' && tag != 'textarea') el.moveTo(3)
+              if (tag != 'input' && tag != 'textarea') el.moveTo(3);
               break;
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
