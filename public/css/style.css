@@ -9,7 +9,11 @@ img {
 }
 
 img.half {
-    width: 40%
+    width: 40%;
+}
+
+img.logo {
+    width: 80%;
 }
 
 a {
@@ -218,7 +222,7 @@ header {
     .back {
         display: none;
     }
-    
+
     img, img.half {
         width: 40%;
     }
