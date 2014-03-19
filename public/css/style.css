@@ -1,6 +1,7 @@
 body {
     text-align: center;
     font-family: 'open sans';
+    background: rgb(230, 217, 200);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -17,6 +18,7 @@ img.logo {
 }
 
 a {
+    color: #006dcc;
     text-decoration: none;
 }
 
@@ -94,6 +96,7 @@ code.orange {
 .back {
     top: 0;
     left: 0;
+    z-index: 5;
     width: 100%;
     color: #000;
     padding: 7px;
@@ -203,6 +206,26 @@ header {
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
     -webkit-border-radius: 3px;
+}
+
+.blockly-wrapper {
+    height: 65%;
+    width: 100%;
+}
+
+#blockly-div {
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+#arduino-code {
+    margin: 0;
+    padding: 0;
+    width: 45%;
+    float: left;
+    height: 100%;
+    border: 1px solid rgb(230, 217, 200);
 }
 
 @media (min-width: 900px) {
