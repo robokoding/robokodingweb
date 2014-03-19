@@ -21,7 +21,7 @@ if ('development' == app.get('env')) {
 
 /* Landingpage */
 app.get('/', function(req, res) {
-	res.sendfile(__dirname + '/index.html');
+	res.render('index');
 });
 
 /* Login and registration */
@@ -33,6 +33,9 @@ app.get('/guest', function(req, res) {
 });
 app.all('/signup', function(req, res) {
 	res.json({ message: "welcome to signup" });
+});
+app.get('/sumorobot', function(req, res) {
+	res.render('sumorobot');
 });
 
 /* Start the app and sockets */
