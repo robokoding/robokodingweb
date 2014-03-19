@@ -1,0 +1,61 @@
+extends layout
+    
+block content
+    section.page1
+        div.page_container
+            div.left
+                img.logo(src='/img/robocoding.png', alt='logo')
+                h2 An amazing journey to master programming
+                p.credit Built by Students
+                div.btns
+                    a.reload.btn(href='/sumorobot') Try it!
+            div.right
+                img(src='/img/nice.jpg', alt='nice')
+
+    section.page2
+        div.page_container
+            img.half(src='/img/motion.jpg', alt='motion')
+            h1 Coding
+            h2 All you need are simple comands
+            code.blue
+                | #include &lt;servo.h><br>
+                | #include &lt;sumorobot.h><br>
+                | void setup() { }<br>
+                | void loop() { }
+            code.orange
+                | left();<br>
+                | right();<br>
+                | forward();<br>
+                | backward();
+
+    section.page3
+        div.page_container
+            div.left
+                h1 Amazing eh?
+                h2 Troughout the journey you earn points and badges which you can share with your friends trough social media
+                div.btns
+                    a.reload.btn(href='http://github.com/silps/sumoino/archive/master.zip') Arduino library
+            div.right
+                img(src='/img/workshop.jpg', alt='wokrshop')
+
+    div.back
+        strong Quick keys: 
+        strong.hightlight S
+        | -
+        a(href='/signup') Signup
+        |
+        strong.hightlight L
+        | -
+        a(href='/login') Login
+        |
+        strong.hightlight G
+        | -
+        a(href='/guest') Guest login
+        |
+        strong.hightlight A
+        | -
+        a(href='http://github.com/silps/sumoino/archive/master.zip') Arduino library
+        |
+        strong.hightlight C
+        | -
+        a(href='http://github.com/robocoding/robocodingweb') Source Code
