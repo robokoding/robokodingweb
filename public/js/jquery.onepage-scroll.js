@@ -345,11 +345,14 @@
             case 51:
               if (tag != 'input' && tag != 'textarea') el.moveTo(3);
               break;
+            case 65:
+              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/silps/sumoino/archive/master.zip");
+              break;
+            case 67:
+              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/robocodingweb");
+              break;
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
-              break;
-            case 73:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/silps/sumoino/archive/master.zip");
               break;
             case 76:
               if (tag != 'input' && tag != 'textarea') location.assign("/login");
