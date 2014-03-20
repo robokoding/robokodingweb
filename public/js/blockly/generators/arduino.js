@@ -149,7 +149,16 @@ Blockly.Arduino.finish = function(code) {
   
   var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + 
     '\nvoid setup() \n{\n  '+setups.join('\n  ') + '\n}'+ '\n\n';
-  return code;//allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
+  //return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
+  // to intend the code in the void loop()
+  if (code != "") {
+    var splitCode = code.split("\n");
+    code = "";
+    for (var i = 0; i < splitCode.length; i++) {
+      code += "  " + splitCode[i] + "\n";
+    }
+  }
+  return "#include <Servo.h>\n#include <Sumorobot.h>\n\nvoid setup() {\n  start();\n}\nvoid loop() {\n" + code + "}\n";
 };
 
 /**

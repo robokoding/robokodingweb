@@ -92,12 +92,12 @@ Blockly.Blocks['sumorobot_delay'] = {
 Blockly.Blocks['sumorobot_opponent'] = {
   init: function() {
     var OPERATORS =
-      [['ENEMY LEFT', 'OPPONENT_LEFT'],
-       ['ENEMY FRONT', 'OPPONENT_FRONT'],
-       ['ENEMY RIGHT', 'OPPONENT_RIGHT']];
+      [['OPPONENT LEFT', 'OPPONENT_LEFT'],
+       ['OPPONENT FRONT', 'OPPONENT_FRONT'],
+       ['OPPONENT RIGHT', 'OPPONENT_RIGHT']];
     this.setColour(120);
     var dropdown = new Blockly.FieldDropdown(OPERATORS);
-    this.appendDummyInput().appendField(dropdown, 'ENEMY');
+    this.appendDummyInput().appendField(dropdown, 'OPPONENT');
     this.setOutput(true, 'Boolean');
     this.setTooltip("");
   }

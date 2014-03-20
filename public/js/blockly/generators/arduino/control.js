@@ -44,7 +44,7 @@ Blockly.Arduino.controls_if = function() {
     branch = Blockly.Arduino.statementToCode(this, 'ELSE');
     code += ' else {\n' + branch + '\n}';
   }
-  return code + '\n';
+  return code;
 };
 
 Blockly.Arduino.controls_repeat = function() {
