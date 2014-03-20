@@ -23,8 +23,10 @@ window.onload = function() {
 	// initialize blockly
 	Blockly.inject(document.getElementById('blockly-div'), {
 		scrollbars: false,
+		trashcan: true,
 		path: '/js/blockly/',
 		toolbox: document.getElementById('toolbox')
 	});
 	Blockly.addChangeListener(onCodeChanged);
+	Blockly.Trashcan
 }
