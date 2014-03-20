@@ -91,12 +91,12 @@ Blockly.Blocks['sumorobot_delay'] = {
 Blockly.Blocks['sumorobot_opponent'] = {
   init: function() {
     var OPERATORS =
-      [['OPPONENT LEFT', 'OPPONENT_LEFT'],
-       ['OPPONENT FRONT', 'OPPONENT_FRONT'],
-       ['OPPONENT RIGHT', 'OPPONENT_RIGHT']];
+      [['ENEMY LEFT', 'ENEMY_LEFT'],
+       ['ENEMY FRONT', 'ENEMY_FRONT'],
+       ['ENEMY RIGHT', 'ENEMY_RIGHT']];
     this.setColour(120);
     var dropdown = new Blockly.FieldDropdown(OPERATORS);
-    this.appendDummyInput().appendField(dropdown, 'OPPONENT');
+    this.appendDummyInput().appendField(dropdown, 'ENEMY');
     this.setOutput(true, 'Boolean');
     this.setTooltip("");
   }
@@ -105,9 +105,9 @@ Blockly.Blocks['sumorobot_opponent'] = {
 Blockly.Blocks['sumorobot_line'] = {
   init: function() {
     var OPERATORS =
-      [['LINE LEFT', 'BOTTOM_LEFT'],
-       ['LINE MIDDLE', 'BOTTOM_MIDDLE'],
-       ['LINE RIGHT', 'BOTTOM_RIGHT']];
+      [['LINE LEFT', 'LINE_LEFT'],
+       ['LINE MIDDLE', 'LINE_MIDDLE'],
+       ['LINE RIGHT', 'LINE_RIGHT']];
     this.setColour(120);
     var dropdown = new Blockly.FieldDropdown(OPERATORS);
     this.appendDummyInput().appendField(dropdown, 'LINE');

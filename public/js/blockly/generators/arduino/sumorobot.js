@@ -56,7 +56,7 @@ Blockly.Arduino['sumorobot_move'] = function(block) {
 };
 
 Blockly.Arduino['sumorobot_opponent'] = function(block) {
-  var code = block.getFieldValue('OPPONENT');
+  var code = block.getFieldValue('ENEMY');
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
