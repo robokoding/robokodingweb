@@ -28,34 +28,39 @@ goog.provide('Blockly.Arduino.sumorobot');
 
 goog.require('Blockly.Generator');
 
-Blockly.Arduino.sumorobot_main = function() {
-  var statements_setup = Blockly.Arduino.statementToCode(this, 'setup');
-  var statements_loop = Blockly.Arduino.statementToCode(this, 'loop');
-  var code = 'void setup() {\n' + statements_setup + '}\nvoid loop() {\n' + statements_loop + '}';
+Blockly.Arduino['sumorobot_libraries'] = function(block) {
+  var code = "#include <Servo.h>\n#include <Sumorobot.h>\n\n";
   return code;
 };
 
-Blockly.Arduino.sumorobot_delay = function(block) {
-  var code = 'delay(' + parseFloat(block.getFieldValue('NUM')) + ');\n';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino.sumorobot_motor = function() {
-  var code = 'start();\n';
+Blockly.Arduino['sumorobot_main'] = function(block) {
+  var statements_setup = Blockly.Arduino.statementToCode(block, 'setup');
+  var statements_loop = Blockly.Arduino.statementToCode(block, 'loop');
+  var code = "void setup() {\n" + statements_setup + "}\nvoid loop() {\n" + statements_loop + "}";
   return code;
 };
 
-Blockly.Arduino.sumorobot_move = function() {
-  var code = this.getFieldValue('MOVE') + '();\n';
+Blockly.Arduino['sumorobot_delay'] = function(block) {
+  var code = "delay(" + parseFloat(block.getFieldValue('DELAY')) + ");\n";
   return code;
 };
 
-Blockly.Arduino.sumorobot_opponent = function() {
-  var code = this.getFieldValue('ENEMY');
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+Blockly.Arduino['sumorobot_motor'] = function(block) {
+  var code = "start();\n";
+  return code;
 };
 
-Blockly.Arduino.sumorobot_line = function() {
-  var code = this.getFieldValue('LINE');
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+Blockly.Arduino['sumorobot_move'] = function(block) {
+  var code = block.getFieldValue('MOVE') + "(" + block.getFieldValue('DELAY') + ");\n";
+  return code;
+};
+
+Blockly.Arduino['sumorobot_opponent'] = function(block) {
+  var code = block.getFieldValue('ENEMY');
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['sumorobot_line'] = function(block) {
+  var code = block.getFieldValue('LINE');
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

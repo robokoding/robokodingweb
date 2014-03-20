@@ -28,6 +28,14 @@ goog.provide('Blockly.Blocks.arduino');
 
 goog.require('Blockly.Blocks');
 
+Blockly.Blocks['sumorobot_libraries'] = {
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput().appendField('LIBRARIES');
+    this.setNextStatement(true);
+    this.setTooltip("");
+  }
+};
 
 Blockly.Blocks['sumorobot_main'] = {
   init: function() {
@@ -53,15 +61,17 @@ Blockly.Blocks['sumorobot_motor'] = {
 Blockly.Blocks['sumorobot_move'] = {
   init: function() {
     var OPERATORS =
-      [['STOP', 'stop'],
+      [['START', 'start'],
+       ['STOP', 'stop'],
        ['FORWARD', 'forward'],
        ['BACKWARD', 'backward'],
        ['LEFT', 'left'],
        ['RIGHT', 'right']];
     this.setColour(330);
     var dropdown = new Blockly.FieldDropdown(OPERATORS);
-    this.appendValueInput('NUM')
-      .setCheck('Number').appendField(dropdown, 'MOVE');
+    this.appendDummyInput().appendField(dropdown, 'MOVE')
+      .appendField(new Blockly.FieldTextInput('0',
+        Blockly.FieldTextInput.numberValidator), 'DELAY');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip("");
@@ -73,7 +83,7 @@ Blockly.Blocks['sumorobot_delay'] = {
     this.setColour(330);
     this.appendDummyInput()
       .appendField(new Blockly.FieldTextInput('0',
-        Blockly.FieldTextInput.numberValidator), 'NUM');
+        Blockly.FieldTextInput.numberValidator), 'DELAY');
     this.setOutput(true, 'Number');
     this.setTooltip("");
   }
