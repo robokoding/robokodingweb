@@ -9,6 +9,10 @@ img {
     width: 100%;
 }
 
+img.tutorial {
+    width: 15%;
+}
+
 img.half {
     width: 40%;
 }
@@ -118,7 +122,6 @@ code.orange {
 }
 
 header {
-    z-index: 10;
     position: relative;
 }
 
@@ -131,7 +134,6 @@ header {
 }
 
 .main section .page_container {
-    z-index: 3;
     position: relative;
     display: table-cell;
     vertical-align: middle;
@@ -209,7 +211,7 @@ header {
 }
 
 .blockly-wrapper {
-    height: 65%;
+    height: 40%;
     width: 100%;
 }
 
