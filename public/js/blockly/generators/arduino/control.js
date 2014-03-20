@@ -33,7 +33,7 @@ Blockly.Arduino.controls_if = function() {
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
       Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-  var code = 'if (' + argument + ') {\n' + branch + '\n}';
+  var code = 'if (' + argument + ') {\n' + branch + '}';
   for (n = 1; n <= this.elseifCount_; n++) {
     argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
       Blockly.Arduino.ORDER_NONE) || 'false';
@@ -42,7 +42,7 @@ Blockly.Arduino.controls_if = function() {
   }
   if (this.elseCount_) {
     branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-    code += ' else {\n' + branch + '\n}';
+    code += ' else {\n' + branch + '}';
   }
   return code;
 };

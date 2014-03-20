@@ -61,12 +61,11 @@ Blockly.Blocks['sumorobot_motor'] = {
 Blockly.Blocks['sumorobot_move'] = {
   init: function() {
     var OPERATORS =
-      [['START', 'start'],
-       ['STOP', 'stop'],
-       ['FORWARD', 'forward'],
+      [['FORWARD', 'forward'],
        ['BACKWARD', 'backward'],
        ['LEFT', 'left'],
-       ['RIGHT', 'right']];
+       ['RIGHT', 'right'],
+       ['STOP', 'stop']];
     this.setColour(330);
     var dropdown = new Blockly.FieldDropdown(OPERATORS);
     this.appendDummyInput().appendField(dropdown, 'MOVE')
