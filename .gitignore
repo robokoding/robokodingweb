@@ -14,5 +14,7 @@ results
 npm-debug.log
 node_modules
 
+#extra
+start.sh
 .directory
 closure-library-read-only/
