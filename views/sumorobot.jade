@@ -1,6 +1,6 @@
 extends layout
 
-block content
+block head
 	script(type='text/javascript', src='/js/sumorobot.js')
 	script(type='text/javascript', src='/js/blockly/blockly_compressed.js')
 	script(type='text/javascript', src='/js/blockly/blocks_compressed.js')
@@ -8,6 +8,7 @@ block content
 	script(type='text/javascript', src='/js/blockly/javascript_compressed.js')
 	script(type='text/javascript', src='/js/blockly/msg/js/en.js')
 
+block body
 	h1 Sumorobot programming
 	div#video
 		//img(src="http://localhost:8080/?action=stream")
@@ -17,9 +18,9 @@ block content
 
 	xml#toolbox(style="display: none").
 		<block type="controls_if"></block>
-		<block type="sumorobot_opponent"></block>
-		<block type="sumorobot_line"></block>
 		<block type="sumorobot_move"></block>
+		<block type="sumorobot_line"></block>
+		<block type="sumorobot_opponent"></block>
 
 	div.blockly-wrapper
 		div#blockly-div
