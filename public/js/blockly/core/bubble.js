@@ -406,8 +406,9 @@ Blockly.Bubble.prototype.layoutBubble_ = function() {
       relativeTop = bBox.height;
     }
   }
-  this.relativeLeft_ = relativeLeft;
-  this.relativeTop_ = relativeTop;
+  // force the bubble to be next to the open button :)
+  this.relativeLeft_ = 0;//relativeLeft;
+  this.relativeTop_ = 0;//relativeTop;
 };
 
 /**
