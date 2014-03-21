@@ -88,7 +88,7 @@ Blockly.Blocks['sumorobot_delay'] = {
   }
 };
 
-Blockly.Blocks['sumorobot_opponent'] = {
+Blockly.Blocks['sumorobot_enemy'] = {
   init: function() {
     var OPERATORS =
       [['ENEMY LEFT', 'ENEMY_LEFT'],
