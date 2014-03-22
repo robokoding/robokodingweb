@@ -9,11 +9,11 @@ block head
 	script(type='text/javascript', src='/js/blockly/msg/js/en.js')
 
 block body
-	h1 Sumorobot programming
-	div#video
-		//img(src="http://localhost:8080/?action=stream")
-	img.tutorial(src="/img/motion.jpg", alt="motion")
-	img.tutorial(src="/img/sensors.jpg", alt="sensors")
+	div.video-wrapper
+		img.tutorial(src="/img/camera.jpg" alt="camera")
+		img.tutorial(src="/img/motion.jpg", alt="motion")
+		img.tutorial(src="/img/sensors.jpg", alt="sensors")
+	div(style="clear: both;")
 
 	xml#toolbox(style="display: none").
 		<block type="controls_if"></block>
@@ -26,7 +26,7 @@ block body
 		textarea#arduino-code(readonly, placeholder="Arduino code comes here ...")
 	div(style="clear: both;")
 
-	div#buttons
+	div.buttons
 		button.reload(onclick="javascript:showExample(line);") LINE EXAMPLE
 		button.reload(onclick="javascript:showExample(enemy);") ENEMY EXAMPLE
-		button.reload(onclick="javascript:showCode();") UPLOAD CODE
+		button.reload(onclick="javascript:sendCode();") UPLOAD CODE
