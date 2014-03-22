@@ -22,7 +22,8 @@
 
     "dependencies": {
         "jade": "0.35.0",
-        "express": "3.4.4"
+        "express": "3.4.4",
+        "socket.io": "0.9.16"
     },
 
     "private": true,
