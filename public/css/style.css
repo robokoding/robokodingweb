@@ -1,5 +1,4 @@
 body {
-    text-align: center;
     font-family: 'open sans';
     background: rgb(230, 217, 200);
     -webkit-font-smoothing: antialiased;
@@ -10,7 +9,7 @@ img {
 }
 
 img.tutorial {
-    width: 15%;
+    width: 30%;
 }
 
 img.half {
@@ -106,6 +105,7 @@ code.orange {
     padding: 7px;
     font-size: 1em;
     position: absolute;
+    text-align: center;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -131,6 +131,7 @@ header {
     display: table;
     overflow: hidden;
     position: absolute;
+    text-align: center;
 }
 
 .main section .page_container {
@@ -213,6 +214,14 @@ header {
 .blockly-wrapper {
     height: 40%;
     width: 100%;
+}
+
+.video-wrapper {
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
 }
 
 #blockly-div {
