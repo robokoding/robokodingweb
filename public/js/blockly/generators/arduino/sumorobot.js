@@ -50,6 +50,11 @@ Blockly.Arduino['sumorobot_motor'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['sumorobot_spin'] = function(block) {
+  var code = block.getFieldValue('SPIN') + "(" + block.getFieldValue('DELAY') + ");\n";
+  return code;
+};
+
 Blockly.Arduino['sumorobot_move'] = function(block) {
   var code = block.getFieldValue('MOVE') + "(" + block.getFieldValue('DELAY') + ");\n";
   return code;
@@ -57,10 +62,10 @@ Blockly.Arduino['sumorobot_move'] = function(block) {
 
 Blockly.Arduino['sumorobot_enemy'] = function(block) {
   var code = block.getFieldValue('ENEMY');
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['sumorobot_line'] = function(block) {
   var code = block.getFieldValue('LINE');
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

@@ -58,6 +58,22 @@ Blockly.Blocks['sumorobot_motor'] = {
   }
 };
 
+Blockly.Blocks['sumorobot_spin'] = {
+  init: function() {
+    var OPERATORS =
+      [['SPIN LEFT', 'spinLeft'],
+       ['SPIN RIGHT', 'spinRight']];
+    this.setColour(330);
+    var dropdown = new Blockly.FieldDropdown(OPERATORS);
+    this.appendDummyInput().appendField(dropdown, 'SPIN')
+      .appendField(new Blockly.FieldTextInput('0',
+        Blockly.FieldTextInput.numberValidator), 'DELAY');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip("");
+  }
+};
+
 Blockly.Blocks['sumorobot_move'] = {
   init: function() {
     var OPERATORS =
