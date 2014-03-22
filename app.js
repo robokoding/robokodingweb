@@ -74,7 +74,8 @@ io.sockets.on('connection', function(socket) {
 			function (error, stdout, stderr) {
 				console.log("INFO", "stdout:", stdout);
 				console.log("INFO", "stderr:", stderr);
-				socket.emit('sumorobot-message', "upload successful");
+				if (stderr.indexOf("error") > -1) socket.emit('sumorobot-message', "upload failed");
+				else socket.emit('sumorobot-message', "upload successful");
 			}
 		);
 	});
