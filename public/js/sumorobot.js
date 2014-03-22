@@ -30,6 +30,8 @@ var enemy =
 		"</block>" +
 	"</xml>";
 
+var socket = null;
+
 /* When code has changed */
 var onCodeChanged = function onCodeChanged() {
 	$('#arduino-code').val(Blockly.Arduino.workspaceToCode());
@@ -44,12 +46,14 @@ var showExample = function showExample(exampleXML) {
 
 /* Send the code */
 var sendCode = function sendCode() {
+	$('#upload').attr('disabled', 'disabled');
+	$('#upload').html('UPLOADING...');
 	socket.emit('send-sumorobot-code', Blockly.Arduino.workspaceToCode());
 };
 
 /* Get a users code */
-var getCode = function getCode(userEmail) {
-	socket.emit('get-code', 'sumorobot', userEmail);
+var getCode = function getCode(user) {
+	socket.emit('get-sumorobot-code', user);
 };
 
 /* Show the code */
@@ -59,11 +63,21 @@ var showCode = function showCode() {
 
 /* When DOM has been loaded */
 window.onload = function() {
-	// initialize blockly
+	/* Initialize blockly */
 	Blockly.inject(document.getElementById('blockly-div'), {
 		trashcan: true,
 		path: '/js/blockly/',
 		toolbox: document.getElementById('toolbox')
 	});
 	Blockly.addChangeListener(onCodeChanged);
+
+	/* Initialize sockets */
+	socket = io.connect();
+
+	/* Receive messages */
+	socket.on('sumorobot-message', function(message) {
+		$('#upload').html('UPLOAD CODE');
+		$('#upload').removeAttr('disabled');
+		alert(message);
+	});
 }
