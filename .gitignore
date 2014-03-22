@@ -18,3 +18,8 @@ node_modules
 start.sh
 .directory
 closure-library-read-only/
+.lib/
+.dep/
+main.ino
+main.hex
+main.o
