@@ -1,22 +1,24 @@
+
 extends layout
 
 block head
 	script(type='text/javascript', src='/js/sumorobot.js')
+	script(type='text/javascript', src='/socket.io/socket.io.js')
 	script(type='text/javascript', src='/js/blockly/blockly_compressed.js')
 	script(type='text/javascript', src='/js/blockly/blocks_compressed.js')
 	script(type='text/javascript', src='/js/blockly/arduino_compressed.js')
-	script(type='text/javascript', src='/js/blockly/javascript_compressed.js')
 	script(type='text/javascript', src='/js/blockly/msg/js/en.js')
 
 block body
 	div.video-wrapper
-		img.tutorial(src="/img/camera.jpg" alt="camera")
+		img.tutorial(src="/img/camera.jpg", alt="camera")
 		img.tutorial(src="/img/motion.jpg", alt="motion")
 		img.tutorial(src="/img/sensors.jpg", alt="sensors")
 	div(style="clear: both;")
 
 	xml#toolbox(style="display: none").
 		<block type="controls_if"></block>
+		<block type="sumorobot_spin"></block>
 		<block type="sumorobot_move"></block>
 		<block type="sumorobot_line"></block>
 		<block type="sumorobot_enemy"></block>
@@ -29,4 +31,4 @@ block body
 	div.buttons
 		button.reload(onclick="javascript:showExample(line);") LINE EXAMPLE
 		button.reload(onclick="javascript:showExample(enemy);") ENEMY EXAMPLE
-		button.reload(onclick="javascript:sendCode();") UPLOAD CODE
+		button#upload.reload(onclick="javascript:sendCode();") UPLOAD CODE
