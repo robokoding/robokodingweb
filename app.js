@@ -4,6 +4,7 @@
 var fs = require('fs'),
 	express = require('express'),
 	socketio = require('socket.io'),
+	requirejs = require('requirejs'),
 	exec = require('child_process').exec;
 
 /* Set app properties */
@@ -26,19 +27,25 @@ if ('development' == app.get('env')) {
 app.get('/', function(req, res) {
 	res.render('index');
 });
-
-/* Login and registration */
+/* Login page */
 app.get('/login', function(req, res) {
 	res.json({ message: "welcome to login" });
 });
+/* Guest login page */
 app.get('/guest', function(req, res) {
 	res.json({ message: "welcome to guest login" });
 });
+/* Signup page */
 app.all('/signup', function(req, res) {
 	res.json({ message: "welcome to signup" });
 });
+/* Sumorobot programming page */
 app.get('/sumorobot', function(req, res) {
-	res.render('sumorobot');
+	res.redirect('http://91.102.9.98:3000/sumorobot');
+});
+/* Sumorobot controller page */
+app.get('/controller', function(req, res) {
+	res.json({ message: "welcome to sumorobot controller" });
 });
 
 /* Start the express server */
@@ -57,7 +64,7 @@ io.sockets.on('connection', function(socket) {
 
 	/* User asks for someones code */
 	socket.on('get-sumorobot-code', function(user) {
-		console.log("INFO", "get :", user);
+		console.log("INFO", "get sumorobot code:", user);
 	});
 
 	/* User send sumorobot code */
