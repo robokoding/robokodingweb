@@ -140,22 +140,25 @@ header {
     vertical-align: middle;
 }
 
-.main section.page1 {
-    background: rgb(230, 217, 200);
-}
-
-.main section.page1 h1 {
+.main section h1 {
     margin: 0px;
     font-size: 4em;
 }
 
-.main section.page1 h2 {
+.main section h2 {
     margin: 0px;
+}
+
+.main section.page1 {
+    background: rgb(230, 217, 200);
+}
+
+.main section.page1 h2 {
     color: rgba(0,0,0,0.85);
 }
 
 .main section .page_container .btns {
-    padding: 2% 0 2% 0;
+    padding: 2% 0% 2% 0%;
     width: 100%;
     clear: both;
 }
@@ -169,13 +172,10 @@ header {
 }
 
 .main section.page2 h1 {
-    margin: 0px;
     color: white;
-    font-size: 4em;
 }
 
 .main section.page2 h2 {
-    margin: 0px;
     color: rgba(255,255,255,0.85);
 }
 
@@ -188,15 +188,43 @@ header {
     background: #E2E4E7;
 }
 
-.main section.page3 h1 {
-    margin: 0px;
-    font-size: 4em;
-    margin-bottom: 0;
-}
 
 .main section.page3 h2 {
-    margin: 0px;
     color: rgba(0,0,0,0.85);
+}
+
+.main section.page4 {
+    background: #FFEFEF;
+}
+
+.main section.page4 img {
+    margin: 1%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main section.page4 img.active {
+    opacity: 1.0;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.main section.page4 img.inactive {
+    opacity: .4;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.main section.page4 input[type="checkbox"] {
+    display: none;
 }
 
 .hightlight {
@@ -296,15 +324,11 @@ header {
         border: rgba(0,0,0,0.05) 5px solid;
     }
 
-    .main section.page1 h1,
-    .main section.page2 h1,
-    .main section.page3 h1 {
+    .main section h1 {
         font-size: 2em;
     }
 
-    .main section.page1 h2,
-    .main section.page2 h2,
-    .main section.page3 h2 {
+    .main section h2 {
         font-size: 1em;
     }
 
