@@ -44,19 +44,30 @@ block body
                     div.right
                         img(src='/img/workshop.jpg', alt='wokrshop')
 
+            section.page4
+                div.page_container
+                    h1 Oder a kit
+                    h2 Choose which parts you need
+                    form#order(action='/order', method='post')
+                        img.inactive(src='/img/body.jpg', alt='body')
+                        input#body-check(type='checkbox', name="body")
+
+                        img.inactive(src='/img/servo.jpg', alt='servo')
+                        input#servo-check(type='checkbox', name="servo")
+
+                        img.inactive(src='/img/shield.jpg', alt='shield')
+                        input#shield-check(type='checkbox', name="shield")
+
+                        img.inactive(src='/img/sumorobot.jpg', alt='sumorobot')
+                        input#sumorobot-check(type='checkbox', name="sumorobot")
+
+                        button.reload.btn(type='submit') Place order
+
             div.back
                 strong Quick keys: 
-                strong.hightlight S
+                strong.hightlight T
                 | -
-                a(href='/signup') Signup
-                |
-                strong.hightlight L
-                | -
-                a(href='/login') Login
-                |
-                strong.hightlight G
-                | -
-                a(href='/guest') Guest login
+                a(href='/sumorobot') Try it
                 |
                 strong.hightlight A
                 | -
@@ -64,4 +75,4 @@ block body
                 |
                 strong.hightlight C
                 | -
-                a(href='http://github.com/robocoding/robocodingweb') Source Code
+                a(href='http://github.com/robocoding/') Source Code
