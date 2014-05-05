@@ -349,7 +349,7 @@
               if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/silps/sumoino/archive/master.zip");
               break;
             case 67:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/robocodingweb");
+              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/");
               break;
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
@@ -359,6 +359,9 @@
               break;
             case 83:
               if (tag != 'input' && tag != 'textarea') location.assign("/signup");
+              break;
+            case 84:
+              if (tag != 'input' && tag != 'textarea') location.assign("/sumorobot");
               break;
             default: return;
           }
@@ -372,5 +375,16 @@
 }(window.jQuery);
 
 $(document).ready(function() {
-    $(".main").onepage_scroll();
+    $('.main').onepage_scroll();
+    $('.inactive').click(function() {
+      if ($(this).hasClass('active')) {
+        $(this).addClass('inactive');
+        $(this).removeClass('active');
+        $( '#' + $(this).attr('alt') + '-check' ).prop('checked', false);
+      } else {
+        $(this).addClass('active');
+        $(this).removeClass('inactive');
+        $( '#' + $(this).attr('alt') + '-check' ).prop('checked', true);
+      }
+    });
 });
