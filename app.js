@@ -47,6 +47,10 @@ app.get('/sumorobot', function(req, res) {
 app.get('/controller', function(req, res) {
 	res.json({ message: "welcome to sumorobot controller" });
 });
+/* Order process */
+app.post('/order', function(req, res) {
+	res.send({ message: "thx your for your order", order: req.body });
+});
 
 /* Start the express server */
 var server = app.listen(process.env.PORT, function() {
