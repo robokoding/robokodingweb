@@ -41,7 +41,8 @@ app.all('/signup', function(req, res) {
 });
 /* Sumorobot programming page */
 app.get('/sumorobot', function(req, res) {
-	res.redirect('http://91.102.9.98:3000/sumorobot');
+	res.render('sumorobot');
+	//res.redirect('http://91.102.9.98:3000/sumorobot');
 });
 /* Sumorobot controller page */
 app.get('/controller', function(req, res) {
