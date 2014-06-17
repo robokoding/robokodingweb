@@ -345,11 +345,14 @@
             case 51:
               if (tag != 'input' && tag != 'textarea') el.moveTo(3);
               break;
+            case 52:
+              if (tag != 'input' && tag != 'textarea') el.moveTo(4);
+              break;
             case 65:
               if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/silps/sumoino/archive/master.zip");
               break;
             case 67:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/");
+              if (tag != 'input' && tag != 'textarea') location.assign("http://silps.github.io/");
               break;
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
@@ -358,7 +361,7 @@
               if (tag != 'input' && tag != 'textarea') location.assign("/login");
               break;
             case 83:
-              if (tag != 'input' && tag != 'textarea') location.assign("/signup");
+              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/");
               break;
             case 84:
               if (tag != 'input' && tag != 'textarea') location.assign("/sumorobot");
@@ -376,15 +379,17 @@
 
 $(document).ready(function() {
     $('.main').onepage_scroll();
-    $('.inactive').click(function() {
-      if ($(this).hasClass('active')) {
-        $(this).addClass('inactive');
-        $(this).removeClass('active');
-        $( '#' + $(this).attr('alt') + '-check' ).prop('checked', false);
-      } else {
-        $(this).addClass('active');
-        $(this).removeClass('inactive');
-        $( '#' + $(this).attr('alt') + '-check' ).prop('checked', true);
-      }
+    /* click event on a part */
+    $('.inactive').click(function(e) {
+      $(this).toggleClass('active');
+      var checkbox = $('#' + $(this).attr('alt') + '-check');
+      checkbox.prop('checked', !checkbox.prop('checked'));
+    });
+
+    $(".fancybox").fancybox({
+        autoCenter: true,
+        openEffect: 'none',
+        closeClick: false,
+        closeEffect: 'none',
     });
 });
