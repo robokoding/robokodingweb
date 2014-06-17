@@ -1,7 +1,7 @@
 extends layout
 
 block head
-    script(type='text/javascript', src='/js/jquery.onepage-scroll.js')
+    script(type="text/javascript", src="/js/jquery.onepage-scroll.js")
 
 block body
     div.wrapper
@@ -9,18 +9,18 @@ block body
             section.page1
                 div.page_container
                     div.left
-                        img.logo(src='/img/robocoding.png', alt='logo')
+                        img.logo(src="/img/robocoding.png", alt="logo")
                         h2 An amazing journey to master programming
                         p.credit Built by Students
                         div.btns
-                            a.reload.btn(href='/sumorobot') Try it!
+                            a.reload.btn(href="/sumorobot") Try it!
                     div.right
-                        img(src='/img/nice.jpg', alt='nice')
+                        img(src="/img/nice.jpg", alt="nice")
 
             section.page2
                 div.page_container
-                    img.half(src='/img/motion.jpg', alt='motion')
-                    img.half(src='/img/sensors.jpg')
+                    img.half(src="/img/motion.jpg", alt="motion")
+                    img.half(src="/img/sensors.jpg")
                     h1 Coding
                     h2 All you need are simple comands
                     code.blue
@@ -40,39 +40,68 @@ block body
                         h1 Amazing eh?
                         h2 Troughout the journey you earn points and badges which you can share with your friends trough social media
                         div.btns
-                            a.reload.btn(href='http://github.com/silps/sumoino/archive/master.zip') Arduino library
+                            a.reload.btn(href="http://github.com/silps/sumoino/archive/master.zip") Arduino library
                     div.right
-                        img(src='/img/workshop.jpg', alt='wokrshop')
+                        img(src="/img/workshop.jpg", alt="wokrshop")
 
             section.page4
                 div.page_container
                     h1 Order a kit
                     h2 Choose which parts you need
-                    form#order(action='/order', method='post')
-                        img.inactive(src='/img/body.jpg', alt='body')
-                        input#body-check(type='checkbox', name="body")
 
-                        img.inactive(src='/img/servo.jpg', alt='servo')
-                        input#servo-check(type='checkbox', name="servo")
+                    div(style="display: none")
+                        div#page1
+                            | The sumorobot body
+                            br
+                            img.info(src="/img/body.jpg", alt="body")
+                        div#page2
+                            | The sumorobot servo
+                            br
+                            img.info(src="/img/servo.jpg", alt="servo")
+                        div#page3
+                            | The sumorobot shield
+                            br
+                            img.info(src="/img/shield.jpg", alt="shield")
+                        div#page4
+                            | The sumorobot
+                            br
+                            img.info(src="/img/sumorobot.jpg", alt="sumorobot")
 
-                        img.inactive(src='/img/shield.jpg', alt='shield')
-                        input#shield-check(type='checkbox', name="shield")
-
-                        img.inactive(src='/img/sumorobot.jpg', alt='sumorobot')
-                        input#sumorobot-check(type='checkbox', name="sumorobot")
-
-                        button.reload.btn(type='submit') Place order
+                    form#order(action="/order", method="post")
+                        div.item
+                            a.fancybox(href="#page1", rel="gallery")
+                                img.inactive#body-img(src="/img/body.jpg", alt="body")
+                            input#body-check(type="checkbox", name="body")
+                        div.item
+                            a.fancybox(href="#page2", rel="gallery")
+                                img.inactive#servo-img(src="/img/servo.jpg", alt="servo")
+                                input#servo-check(type="checkbox", name="servo")
+                        div.item
+                            a.fancybox(href="#page3", rel="gallery")
+                                img.inactive#shield-img(src="/img/shield.jpg", alt="shield")
+                                input#shield-check(type="checkbox", name="shield")
+                        div.item
+                            a.fancybox(href="#page4", rel="gallery")
+                                img.inactive#sumorobot-img(src="/img/sumorobot.jpg", alt="sumorobot")
+                                input#sumorobot-check(type="checkbox", name="sumorobot")
+                        div(style="clear: both;")
+                        
+                        button.reload.btn(type="submit") Place order
 
             div.back
                 strong Quick keys: 
                 strong.hightlight T
                 | -
-                a(href='/sumorobot') Try it
+                a(href="/sumorobot") Try it
                 |
                 strong.hightlight A
                 | -
-                a(href='http://github.com/silps/sumoino/archive/master.zip') Arduino library
+                a(href="http://github.com/silps/sumoino/archive/master.zip") Arduino library
+                |
+                strong.hightlight S
+                | -
+                a(href="http://github.com/robocoding/") Source Code
                 |
                 strong.hightlight C
                 | -
-                a(href='http://github.com/robocoding/') Source Code
+                a(href="http://silps.github.io") Contact
