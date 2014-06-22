@@ -357,6 +357,9 @@
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
               break;
+            case 73:
+              if (tag != 'input' && tag != 'textarea') location.assign("http://www.instructables.com/id/Arduino-Sumorobot/");
+              break;
             case 76:
               if (tag != 'input' && tag != 'textarea') location.assign("/login");
               break;
