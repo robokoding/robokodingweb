@@ -1,36 +1,48 @@
 /* Line stopping example */
 var lineExample =
-	"<xml>" +
-		"<block type='controls_if' x='25' y='25'>" +
-			"<value name='IF0'>" +
-				"<block type='sumorobot_line'>" +
-					"<field name='LINE'>LINE_MIDDLE</field>" +
-				"</block>" +
-			"</value>" +
-			"<statement name='DO0'>" +
-				"<block type='sumorobot_move'>" +
-					"<field name='MOVE'>stop</field>" +
-				"</block>" +
-			"</statement>" +
-		"</block>" +
-	"</xml>";
+        "<xml>" +
+                "<block type='controls_if' x='25' y='25'>" +
+                        "<mutation else='1'></mutation>" +
+                        "<value name='IF0'>" +
+                                "<block type='sumorobot_line'>" +
+                                        "<field name='LINE'>LINE_MIDDLE</field>" +
+                                "</block>" +
+                        "</value>" +
+                        "<statement name='DO0'>" +
+                                "<block type='sumorobot_move'>" +
+                                        "<field name='MOVE'>stop</field>" +
+                                "</block>" +
+                        "</statement>" +
+                        "<statement name='ELSE'>" +
+                                "<block type='sumorobot_move'>" +
+                                        "<field name='MOVE'>forward</field>" +
+                                "</block>" +
+                        "</statement>" +
+                "</block>" +
+        "</xml>";
 
 /* Enemy attacking example */
 var enemyExample =
-	"<xml>" +
-		"<block type='controls_if' x='25' y='25'>" +
-			"<value name='IF0'>" +
-				"<block type='sumorobot_enemy'>" +
-					"<field name='ENEMY'>ENEMY_FRONT</field>" +
-				"</block>" +
-			"</value>" +
-			"<statement name='DO0'>" +
-				"<block type='sumorobot_move'>" +
-					"<field name='MOVE'>forward</field>" +
-				"</block>" +
-			"</statement>" +
-		"</block>" +
-	"</xml>";
+        "<xml>" +
+                "<block type='controls_if' x='25' y='25'>" +
+                        "<mutation else='1'></mutation>" +
+                        "<value name='IF0'>" +
+                                "<block type='sumorobot_enemy'>" +
+                                        "<field name='ENEMY'>ENEMY_FRONT</field>" +
+                                "</block>" +
+                        "</value>" +
+                        "<statement name='DO0'>" +
+                                "<block type='sumorobot_move'>" +
+                                        "<field name='MOVE'>forward</field>" +
+                                "</block>" +
+                        "</statement>" +
+                        "<statement name='ELSE'>" +
+                                "<block type='sumorobot_spin'>" +
+                                        "<field name='SPIN'>spinLeft</field>" +
+                                "</block>" +
+                        "</statement>" +
+                "</block>" +
+        "</xml>";
 
 /* The socket object */
 var socket = null;
@@ -50,7 +62,7 @@ var showExample = function showExample(exampleXML) {
 /* Send the code */
 var sendCode = function sendCode() {
 	$('#upload').attr('disabled', 'disabled');
-	$('#upload').html('UPLOADING...');
+	$('#upload').html('Uploading...');
 	socket.emit('send-sumorobot-code', Blockly.Arduino.workspaceToCode());
 };
 
@@ -79,9 +91,8 @@ window.onload = function() {
 
 	/* Receive messages */
 	socket.on('sumorobot-message', function(message) {
-		$('#upload').html('UPLOAD CODE');
+		$('#upload').html('Upload code');
 		$('#upload').removeAttr('disabled');
-		alert(message);
 	});
 }
 
