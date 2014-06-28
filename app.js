@@ -11,17 +11,6 @@ var fs = require('fs'),
 var app = express();
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + "/public"));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.logger('dev'));
-app.use(express.methodOverride());
-app.use(express.cookieParser());
-app.use(app.router);
-
-/* Development only */
-if ('development' == app.get('env')) {
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-}
 
 /* Landingpage */
 app.get('/', function(req, res) {
@@ -50,7 +39,7 @@ app.get('/controller', function(req, res) {
 });
 /* Order process */
 app.post('/order', function(req, res) {
-	res.send({ message: "thx your for your order", order: req.body });
+	res.send({ message: "thank you for your order", order: req.body });
 });
 
 /* Start the express server */
