@@ -389,10 +389,10 @@ $(document).ready(function() {
       checkbox.prop('checked', !checkbox.prop('checked'));
     });
 
-    $(".fancybox").fancybox({
+    /*$(".fancybox").fancybox({
         autoCenter: true,
         openEffect: 'none',
         closeClick: false,
         closeEffect: 'none',
-    });
+    });*/
 });
