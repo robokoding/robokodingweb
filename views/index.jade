@@ -21,6 +21,7 @@ block body
                 div.page_container
                     img.half(src="/img/motion.jpg", alt="motion")
                     img.half(src="/img/sensors.jpg")
+                    img.half(src="/img/app.png")
                     h1 Coding
                     h2 All you need are simple comands
                     code.blue
@@ -42,9 +43,19 @@ block body
                         div.btns
                             a.reload.btn(href="http://github.com/silps/sumoino/archive/master.zip") Arduino library
                     div.right
-                        img(src="/img/workshop.jpg", alt="wokrshop")
+                        img(src="/img/workshop.jpg", alt="workshop")
 
             section.page4
+                div.page_container
+                    div.left
+                        h1 Build one
+                        h2 Just follow the step by step instructions
+                        div.btns
+                            a.reload.btn(href="http://www.instructables.com/id/Arduino-Sumorobot/") Instructables
+                    div.right
+                        img(src="/img/soldering.jpg", alt="soldering")
+
+            section.page5
                 div.page_container
                     h1 Order a kit
                     h2 Choose which parts you need
@@ -69,19 +80,19 @@ block body
 
                     form#order(action="/order", method="post")
                         div.item
-                            a.fancybox(href="#page1", rel="gallery")
+                            a.fancybox(href="#", rel="gallery")
                                 img.inactive#body-img(src="/img/body.jpg", alt="body")
                             input#body-check(type="checkbox", name="body")
                         div.item
-                            a.fancybox(href="#page2", rel="gallery")
+                            a.fancybox(href="#", rel="gallery")
                                 img.inactive#servo-img(src="/img/servo.jpg", alt="servo")
                                 input#servo-check(type="checkbox", name="servo")
                         div.item
-                            a.fancybox(href="#page3", rel="gallery")
+                            a.fancybox(href="#", rel="gallery")
                                 img.inactive#shield-img(src="/img/shield.jpg", alt="shield")
                                 input#shield-check(type="checkbox", name="shield")
                         div.item
-                            a.fancybox(href="#page4", rel="gallery")
+                            a.fancybox(href="#", rel="gallery")
                                 img.inactive#sumorobot-img(src="/img/sumorobot.jpg", alt="sumorobot")
                                 input#sumorobot-check(type="checkbox", name="sumorobot")
                         div(style="clear: both;")
@@ -91,21 +102,21 @@ block body
             div.back
                 strong Quick keys: 
                 strong.hightlight T
-                | -
+                strong -
                 a(href="/sumorobot") Try it
-                |
+                strong |
                 strong.hightlight A
-                | -
+                strong -
                 a(href="http://github.com/silps/sumoino/archive/master.zip") Arduino library
-                |
+                strong |
                 strong.hightlight S
-                | -
+                strong -
                 a(href="http://github.com/robocoding/") Source Code
-                |
+                strong |
                 strong.hightlight I
-                | -
+                strong -
                 a(href="http://www.instructables.com/id/Arduino-Sumorobot/") Instructables
-                |
+                strong |
                 strong.hightlight C
-                | -
+                strong -
                 a(href="http://silps.github.io") Contact
