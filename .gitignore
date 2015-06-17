@@ -23,3 +23,6 @@ closure-library-read-only/
 main.ino
 main.hex
 main.o
+
+code.ino
+build-uno/
