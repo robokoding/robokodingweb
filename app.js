@@ -30,7 +30,7 @@ app.all('/signup', function(req, res) {
 });
 /* Sumorobot programming page */
 app.get('/sumorobot', function(req, res) {
-	res.render(process.env.SUMOROBOT_PAGE);
+	res.render("sumorobot");
 	//res.redirect('http://91.102.9.98:3000/sumorobot');
 });
 /* Sumorobot controller page */
@@ -43,8 +43,8 @@ app.post('/order', function(req, res) {
 });
 
 /* Start the express server */
-var server = app.listen(process.env.PORT, function() {
-	console.log("INFO", "express server listening on port:", process.env.PORT);
+var server = app.listen(3000, function() {
+	console.log("INFO", "express server listening on port:", 3000);
 });
 
 /* Start socket.io */
@@ -65,13 +65,13 @@ io.sockets.on('connection', function(socket) {
 	socket.on('send-sumorobot-code', function(code) {
 		console.log("INFO", "received sumorobot code:", code);
 		/* Write the program to the file */
-		fs.writeFile("public/compiler/main.ino", code, function(err) {
+		fs.writeFile("public/compiler/code.ino", code, function(err) {
 			if (err) socket.emit('sumorobot-message', "upload failed");
 			else console.log("INFO", "sumorobot code was saved");
 		});
 		console.log("INFO", "compiling sumorobt code");
 		/* Compile the program and upload it */
-		var child = exec("cd public/compiler && make all && make upload",
+		var child = exec("cd public/compiler && make upload",
 			function (error, stdout, stderr) {
 				console.log("INFO", "stdout:", stdout);
 				console.log("INFO", "stderr:", stderr);

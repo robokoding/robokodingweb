@@ -60,8 +60,9 @@ code.orange {
 }
 
 .reload {
-    padding: 2%;
-    font-size: 1.2em;
+    margin-right: 1%;
+    padding: 1%;
+    font-size: 1em;
     font-weight: bold;
     border-radius: 5px;
     background: #006dcc;
@@ -253,7 +254,7 @@ img.info {
 }
 
 .blockly-wrapper {
-    height: 40%;
+    height: 90%;
     width: 100%;
 }
 
@@ -266,7 +267,7 @@ img.info {
 }
 
 #blockly-div {
-    width: 50%;
+    width: 60%;
     float: left;
     height: 100%;
 }
@@ -274,7 +275,7 @@ img.info {
 #arduino-code {
     margin: 0;
     padding: 0;
-    width: 49%;
+    width: 30%;
     float: left;
     height: 100%;
     border: 1px solid rgb(230, 217, 200);

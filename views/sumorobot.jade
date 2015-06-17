@@ -6,18 +6,17 @@ block head
 	script(type="text/javascript", src="/js/blockly/blockly_compressed.js")
 	script(type="text/javascript", src="/js/blockly/blocks_compressed.js")
 	script(type="text/javascript", src="/js/blockly/arduino_compressed.js")
-	script(type="text/javascript", src="/js/blockly/msg/js/en.js")
+	script(type="text/javascript", src="/js/blockly/msg/js/et.js")
 
 block body
-	div.video-wrapper
-		img.tutorial(src="/img/camera.jpg", alt="camera")
-		img.tutorial(src="/img/motion.jpg", alt="motion")
-		img.tutorial(src="/img/sensors.jpg", alt="sensors")
-	div(style="clear: both;")
+	#div.video-wrapper
+		#img.tutorial(src="/img/camera.jpg", alt="camera")
+		#img.tutorial(src="/img/motion.jpg", alt="motion")
+		#img.tutorial(src="/img/sensors.jpg", alt="sensors")
+	#div(style="clear: both;")
 
 	xml#toolbox(style="display: none").
 		<block type="controls_if"></block>
-		<block type="sumorobot_spin"></block>
 		<block type="sumorobot_move"></block>
 		<block type="sumorobot_line"></block>
 		<block type="sumorobot_enemy"></block>
@@ -28,6 +27,6 @@ block body
 	div(style="clear: both;")
 
 	div.buttons
-		button.reload(onclick="javascript:showExample(lineExample);") Line example
-		button.reload(onclick="javascript:showExample(enemyExample);") Enemy example
-		button#upload.reload(onclick="javascript:sendCode();") Uload code
+		button.reload(onclick="javascript:showExample(lineExample);") Example 1
+		button.reload(onclick="javascript:showExample(enemyExample);") Example 2
+		button#upload.reload(onclick="javascript:sendCode();") Upload code

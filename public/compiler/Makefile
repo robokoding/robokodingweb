@@ -1,7 +1,7 @@
-BOARD := uno
-ARDUINODIR := /usr/share/arduino
-SERIALDEV := /dev/ttyACM0
-#rfcomm0
-BOARD_UPLOAD_SPEED := 115200
-#SHELL := /system/bin/sh
-include arduino.mk
+# Arduino Make file. Refer to https://github.com/sudar/Arduino-Makefile
+
+BOARD_TAG = uno
+ARDUINO_PORT = /dev/ttyACM0
+
+include /usr/share/arduino/Common.mk
+include /usr/share/arduino/Arduino.mk

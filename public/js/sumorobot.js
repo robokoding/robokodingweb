@@ -4,19 +4,13 @@ var lineExample =
                 "<block type='controls_if' x='25' y='25'>" +
                         "<mutation else='1'></mutation>" +
                         "<value name='IF0'>" +
-                                "<block type='sumorobot_line'>" +
-                                        "<field name='LINE'>LINE_MIDDLE</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_line'></block>" +
                         "</value>" +
                         "<statement name='DO0'>" +
-                                "<block type='sumorobot_move'>" +
-                                        "<field name='MOVE'>stop</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_move'></block>" +
                         "</statement>" +
                         "<statement name='ELSE'>" +
-                                "<block type='sumorobot_move'>" +
-                                        "<field name='MOVE'>forward</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_move'></block>" +
                         "</statement>" +
                 "</block>" +
         "</xml>";
@@ -27,19 +21,13 @@ var enemyExample =
                 "<block type='controls_if' x='25' y='25'>" +
                         "<mutation else='1'></mutation>" +
                         "<value name='IF0'>" +
-                                "<block type='sumorobot_enemy'>" +
-                                        "<field name='ENEMY'>ENEMY_FRONT</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_enemy'></block>" +
                         "</value>" +
                         "<statement name='DO0'>" +
-                                "<block type='sumorobot_move'>" +
-                                        "<field name='MOVE'>forward</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_move'></block>" +
                         "</statement>" +
                         "<statement name='ELSE'>" +
-                                "<block type='sumorobot_spin'>" +
-                                        "<field name='SPIN'>spinLeft</field>" +
-                                "</block>" +
+                                "<block type='sumorobot_move'></block>" +
                         "</statement>" +
                 "</block>" +
         "</xml>";
