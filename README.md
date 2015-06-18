@@ -2,6 +2,8 @@
 
 The website to program sumorobots graphically ^_^
 
+![interface](https://lh3.googleusercontent.com/bJV_hLjBS0oQoIrBZQs-4WAIP9vfLhD551hB0aKrVQF3=w1920-h557-no)
+
 ## setup instructions
 
 ```bash
