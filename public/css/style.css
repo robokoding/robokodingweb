@@ -272,13 +272,17 @@ img.info {
     height: 100%;
 }
 
-#arduino-code {
-    margin: 0;
+#sumorobot-code {
     padding: 0;
-    width: 30%;
-    float: left;
     height: 100%;
+    width: 100%;
     border: 1px solid rgb(230, 217, 200);
+}
+
+#code-wrapper {
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
 }
 
 @media (min-width: 900px) {
@@ -300,7 +304,7 @@ img.info {
         height: 100%;
     }
 
-    #arduino-code {
+    #sumorobot-code {
         display: none;
     }
 
@@ -319,7 +323,7 @@ img.info {
         height: 100%;
     }
 
-    #arduino-code {
+    #sumorobot-code {
         display: none;
     }
 

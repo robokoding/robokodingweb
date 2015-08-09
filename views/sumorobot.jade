@@ -5,8 +5,8 @@ block head
 	script(type="text/javascript", src="/socket.io/socket.io.js")
 	script(type="text/javascript", src="/js/blockly/blockly_compressed.js")
 	script(type="text/javascript", src="/js/blockly/blocks_compressed.js")
-	script(type="text/javascript", src="/js/blockly/arduino_compressed.js")
-	script(type="text/javascript", src="/js/blockly/msg/js/et.js")
+	script(type="text/javascript", src="/js/blockly/javascript_compressed.js")
+	script(type="text/javascript", src="/js/blockly/msg/js/en.js")
 
 block body
 	#div.video-wrapper
@@ -15,18 +15,14 @@ block body
 		#img.tutorial(src="/img/sensors.jpg", alt="sensors")
 	#div(style="clear: both;")
 
-	xml#toolbox(style="display: none").
-		<block type="controls_if"></block>
-		<block type="sumorobot_move"></block>
-		<block type="sumorobot_line"></block>
-		<block type="sumorobot_enemy"></block>
-
 	div.blockly-wrapper
 		div#blockly-div
-		textarea#arduino-code(readonly, placeholder="Arduino code comes here ...")
+		div#code-wrapper
+			textarea#sumorobot-code(readonly, placeholder="Arduino code comes here ...")
 	div(style="clear: both;")
 
 	div.buttons
 		button.reload(onclick="javascript:showExample(lineExample);") Example 1
 		button.reload(onclick="javascript:showExample(enemyExample);") Example 2
+		button.reload(onclick="javascript:toggleCodingMode();") Coding mode
 		button#upload.reload(onclick="javascript:sendCode();") Upload code
