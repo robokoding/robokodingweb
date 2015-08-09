@@ -4,7 +4,6 @@
 var fs = require('fs'),
 	express = require('express'),
 	socketio = require('socket.io'),
-	requirejs = require('requirejs'),
 	exec = require('child_process').exec;
 
 /* Set app properties */

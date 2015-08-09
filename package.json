@@ -1,5 +1,5 @@
 {
-    "name": "robocoding",
+    "name": "robokoding",
     "version": "0.1.0", 
     "description": "A website where users learn to code while competing against each other",
   
@@ -9,10 +9,10 @@
         "challenge"
     ],
 
-    "homepage": "http://www.robocoding.com/",
+    "homepage": "http://www.robokoding.com/",
     "repository": {
         "type": "git",
-        "url": "http://github.com/robocoding/robocodingweb.git"
+        "url": "http://github.com/robokoding/robokodingweb.git"
     },
 
     "engines": {
@@ -22,11 +22,8 @@
 
     "dependencies": {
         "jade": "*",
-        "colors": "*",
         "express": "*",
-        "requirejs": "*",
-        "socket.io": "*",
-        "serialport": "*"
+        "socket.io": "*"
     },
 
     "private": true,
