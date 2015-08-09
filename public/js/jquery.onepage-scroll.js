@@ -349,10 +349,10 @@
               if (tag != 'input' && tag != 'textarea') el.moveTo(4);
               break;
             case 65:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/silps/sumoino/archive/master.zip");
+              if (tag != 'input' && tag != 'textarea') location.assign("https://github.com/robokoding/sumorobot-arduino");
               break;
             case 67:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://silps.github.io/");
+              if (tag != 'input' && tag != 'textarea') location.assign("https://github.com/silps");
               break;
             case 71:
               if (tag != 'input' && tag != 'textarea') location.assign("/guest");
@@ -364,7 +364,7 @@
               if (tag != 'input' && tag != 'textarea') location.assign("/login");
               break;
             case 83:
-              if (tag != 'input' && tag != 'textarea') location.assign("http://github.com/robocoding/");
+              if (tag != 'input' && tag != 'textarea') location.assign("https://github.com/robokoding/robokodingweb");
               break;
             case 84:
               if (tag != 'input' && tag != 'textarea') location.assign("/sumorobot");
