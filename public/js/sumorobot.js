@@ -1,36 +1,36 @@
 /* Line stopping example */
 var lineExample =
-		"<xml>" +
-				"<block type='controls_if' x='25' y='25'>" +
-						"<mutation else='1'></mutation>" +
-						"<value name='IF0'>" +
-								"<block type='line'></block>" +
-						"</value>" +
-						"<statement name='DO0'>" +
-								"<block type='move'></block>" +
-						"</statement>" +
-						"<statement name='ELSE'>" +
-								"<block type='move'></block>" +
-						"</statement>" +
-				"</block>" +
-		"</xml>";
+	"<xml>" +
+		"<block type='controls_if' x='25' y='25'>" +
+			"<mutation else='1'></mutation>" +
+			"<value name='IF0'>" +
+				"<block type='sumorobot_line'></block>" +
+			"</value>" +
+			"<statement name='DO0'>" +
+				"<block type='sumorobot_move'></block>" +
+			"</statement>" +
+			"<statement name='ELSE'>" +
+				"<block type='sumorobot_move'></block>" +
+			"</statement>" +
+		"</block>" +
+	"</xml>";
 
 /* Enemy attacking example */
 var enemyExample =
-		"<xml>" +
-				"<block type='controls_if' x='25' y='25'>" +
-						"<mutation else='1'></mutation>" +
-						"<value name='IF0'>" +
-								"<block type='enemy'></block>" +
-						"</value>" +
-						"<statement name='DO0'>" +
-								"<block type='move'></block>" +
-						"</statement>" +
-						"<statement name='ELSE'>" +
-								"<block type='move'></block>" +
-						"</statement>" +
-				"</block>" +
-		"</xml>";
+	"<xml>" +
+		"<block type='controls_if' x='25' y='25'>" +
+			"<mutation else='1'></mutation>" +
+			"<value name='IF0'>" +
+				"<block type='sumorobot_enemy'></block>" +
+			"</value>" +
+			"<statement name='DO0'>" +
+				"<block type='sumorobot_move'></block>" +
+			"</statement>" +
+			"<statement name='ELSE'>" +
+				"<block type='sumorobot_move'></block>" +
+			"</statement>" +
+		"</block>" +
+	"</xml>";
 
 /* The socket object */
 var socket = null;
@@ -155,7 +155,7 @@ window.onload = function() {
 		init: function() {
 			this.setHSV(210, 1.00, 255*0.74);
 			this.appendDummyInput().appendField(Blockly.Msg.CONTROLS_SUMOROBOT_DELAY)
-				.appendField(new Blockly.FieldTextInput('0', Blockly.FieldTextInput.numberValidator), 'DELAY');
+				.appendField(new Blockly.FieldTextInput('1000', Blockly.FieldTextInput.numberValidator), 'DELAY');
 			this.setPreviousStatement(true);
 			this.setNextStatement(true);
 			this.setTooltip('continue moving to chosen direction');
